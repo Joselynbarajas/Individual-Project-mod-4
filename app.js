@@ -12,11 +12,21 @@ function searchChange(event) {
 
 async function renderMovies(searchTerm) {
     const response = await fetch(
-        `https://omdbapi.com/?s=${searchTerm}&apikey=275cb097&s`
+       ` https://www.omdbapi.com/s=${searchTerm}&apikey=275cb097&s=fast`
+
     );
     const data = await response.json();
-    currentMovies = data.Search
-    displayMovies(currentMovies)
+    if (searchName) {
+  searchName.innerHTML = event.target.value;
+}
+
+if(data.Search) {
+    currentMovies = data.Search;
+    displayMovies(currentMovies);
+}
+else {
+    moviesWrapper.innerHTML = "<p>No movies found.</p>";
+    }
 }
 
 function displayMovies(movieList) {
@@ -25,12 +35,12 @@ function displayMovies(movieList) {
     .map((movie) => {
         return `
         <div class="movie">
-        <img src=${movie.Poster} alt"" />
+        <img src="${movie.Poster}" alt"${movie.Title}" />
         <h2>${movie.Title}</h2>
         <h4>${movie.Year}</h4>
         <button>Learn More</button>
         </div>
-   `;
+   `
     })
     .join("");
 }
@@ -43,9 +53,9 @@ let sortedMovies = [...currentMovies];
 
 
     if (sortOption === "newest") {
-sortedMovies.sort((a,b) => b.Year - a.Year);
+sortedMovies.sort((a,b) => parseInt(b.Year) - parseInt(a.Year));
    } else if (sortOption === "oldest"){
-sortedMovies.sort((a,b) => a.Year - b.Year);
+sortedMovies.sort((a,b) => parseInt(a.Year) - parseInt(b.Year));
     }
 
     displayMovies(sortedMovies)
