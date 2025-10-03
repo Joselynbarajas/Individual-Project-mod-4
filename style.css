@@ -315,7 +315,7 @@ HIGHLIGHTS
 
 #highlights:after,
 #highlights:before {
-  background: url('Assests/wave.svg');
+  background: url('ts/wave.svg');
   content: "";
   position: absolute;
   width: 101vw;

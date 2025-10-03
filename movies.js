@@ -2,10 +2,10 @@
 
  async function rendermovies(filter) {
    const movieWrapper = document.querySelector(".movies");
-     movieWrapper.classList += 'movies__loading';
+     movieWrapper.classList.add('movies__loading');
 
    if (!movies) {
-     movies = await getMovies();
+     movies = await getmovies();
    }
   
    movieWrapper.classList.remove('movies__loading');
@@ -65,7 +65,7 @@
    return ratingHTML;
  }
 
- function filtermovies(event) {
+ function filterMovies(event) {
    rendermovies(event.target.value);
  }
 
@@ -92,7 +92,7 @@
          {
            id: 2,
            title: "The Valet",
-           url: "Assests/atomic habits.jpg",
+           url: "Assets/atomic habits.jpg",
            originalPrice: 10.99,
            salePrice: 6.99,
            rating: 5,
@@ -100,7 +100,7 @@
          {
            id: 3,
            title: "Uncut Gems",
-           url: "Assests/deep work.jpeg",
+           url: "Assets/deep work.jpeg",
            originalPrice: 10.99,
            salePrice:6.99,
            rating: 5,
@@ -108,15 +108,15 @@
          {
            id: 4,
            title: "Beautiful Boy",
-           url: "Assests/book-1.jpeg",
+           url: "",
            originalPrice: 10.99,
            salePrice: 6.99,
            rating: 4.5,
          },
          {
-           id: 1,
+           id: 5,
            title: "A Minecraft Movie",
-           url: "Assests/book-2 (1).jpeg",
+           url: "",
            originalPrice: 12.99,
            salePrice: 8.99,
            rating: 4,
@@ -124,7 +124,7 @@
          {
            id: 6,
            title: "Final Destination",
-           url: "Assests/book-3.jpeg",
+           url: "",
            originalPrice: 12.99,
            salePrice: 8.99,
            rating: 5,
@@ -132,7 +132,7 @@
          {
            id: 7,
            title: "Crazy Rich Asians",
-           url: "Assests/book-4.jpeg",
+           url: "",
            originalPrice: 12.99,
            salePrice: 8.99,
            rating: 4,
@@ -140,7 +140,7 @@
          {
            id: 8,
            title: "Sinners",
-           url: "Assests/book-5.jpeg",
+           url: "",
            originalPrice: 12.99,
            salePrice: 8.99,
            rating: 4.5,
@@ -148,7 +148,7 @@
          {
            id: 9,
            title: "28 Years Later",
-           url: "Assests/book-6.jpeg",
+           url: "g",
            originalPrice: 12.99,
            salePrice: 8.99,
            rating: 2,
@@ -156,7 +156,7 @@
          {
            id: 10,
            title: "Flow",
-           url: "Assests/book-7.jpg",
+           url: "",
            originalPrice: 12.99,
            salePrice: 8.99,
            rating: 4,
@@ -164,7 +164,7 @@
          {
            id: 11,
            title: "How To train Your Dragon",
-           url: "Assests/book-8.jpeg",
+           url: "",
            originalPrice: 12.99,
            salePrice: 8.99,
            rating: 4.5,
@@ -173,55 +173,55 @@
          {
            id: 12,
            title: "Lilo & Sticth",
-           url: "Assests/atomic habits.jpg",
+           url: "",
            originalPrice: 12.99,
            salePrice: 8.99,
            rating: 5,
          },
          {
-           id: 1,
+           id: 13,
            title: "The Godfather",
-           url: "Assests/deep work.jpeg",
+           url: "",
            originalPrice: 10.99,
            salePrice: 6.99,
            rating: 5,
          },
          {
-           id: 4,
+           id: 14,
            title: "Dark Knight",
-           url: "Assests/book-1.jpeg",
+           url: "",
            originalPrice: 10.99,
            salePrice: 6.99,
            rating: 4.5,
          },
          {
-           id: 5,
+           id: 15,
            title: "Lion King",
-           url: "Assests/book-2 (1).jpeg",
+           url: "",
            originalPrice: 10.99,
            salePrice: 6.99,
            rating: 4,
          },
          {
-           id: 6,
+           id: 16,
            title: "Whiplash",
-           url: "Assests/book-3.jpeg",
+           url: "",
            originalPrice: 10.99,
            salePrice: 6.99,
            rating: 5,
          },
          {
-           id: 7,
+           id: 17,
            title: "Gladiator",
-           url: "Assests/book-4.jpeg",
+           url: "",
            originalPrice: 10.99,
            salePrice: 6.99,
            rating: 4,
          },
          {
-           id: 8,
+           id: 18,
            title: "Wall-E",
-           url: "Assests/book-5.jpeg",
+           
            originalPrice: 10.99,
            salePrice: 6.99,
            rating: 4.5,
