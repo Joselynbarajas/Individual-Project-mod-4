@@ -1,12 +1,24 @@
-const moviesWrapper = document.querySelector(".movies");
-const searchName = document.querySelector(".searchName");
+const moviesWrapper = document.querySelector(".movies"); 
+const searchInput = document.querySelector(".header__movie--input");
 
 let  currentMovies = [];
+let currentSearchTerm = "";
 
 function searchChange(event) {
+    const value = event.target.value.trim();
+    currentSearchTerm = value;
+
+    if (value.length >= 3) {
+        renderMovies(value);
+    } else {
+        moviesWrapper.innerHTML = "<p>No movies found.</p>";
+    }
+}
+
+
     renderMovies(event.target.value);
     searchName.innerHTML = event.target.value;
-}
+
 
 
 function openMenu() {
@@ -16,37 +28,43 @@ function openMenu() {
 
 
 async function renderMovies(searchTerm) {
-    const response = await fetch(
-       ` https://www.omdbapi.com/s=${searchTerm}&apikey=275cb097`
-       
+    try {
+    const res = await fetch(
+       `https://www.omdbapi.com/?s=${searchTerm}&apikey=275cb097`
     );
-    const data = await response.json();
+    const data = await res.json();
+
+if (data.Response === "True" && Array.isArray(data.Search)) {
     currentMovies = data.Search;
     displayMovies(currentMovies);
+} else {
+    moviesWrapper.innerHTML = `<p> No results found for "${searchTerm}".</p>`;
+}
+}  catch (err) {
+    console.error("Fetch error;", err);
+    moviesWrapper.innerHTML = "<p>Something went wrong. Please try again </p>";
+  }
 }
 
-if(data.Search) {
-    currentMovies = data.Search;
-    displayMovies(currentMovies);
-}
-else {
-    moviesWrapper.innerHTML = "<p>No movies found.</p>";
-    }
 
 
-function displayMovies(movieList) {
-     moviesWrapper.innerHTML = movieList
+function displayMovies(list) {
+     moviesWrapper.innerHTML = list
     .slice(0,6)
-    .map((movie) => {
-        return `
+    .map(movie => `
         <div class="movie">
-        <img src=${movie.Poster} alt="" />
-        <h2>${movie.Title}</h2>
-        <h4>${movie.Year}</h4>
-        <button> Learn More </button>
+        <figure class="movie__img--wrapper">
+        <img 
+        class="movie__img"
+        src="${movie.Poster !== "N/A" ? movie.Poster : "Assets/placeholder.png"}"
+         alt="${movie.Title}" 
+         />
+         </figure>
+         <div class="movie__title">${movie.Title}</div>
+         <div class="movie__year">${movie.Year}</div>
+         <button class="btn learn-more" onclick="learMore('${movie.imdbID}')">Learn More </button>
         </div>
-   `;
-    })
+   `)
     .join("");
 }
 

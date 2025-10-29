@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Movies Here </title>
     <link rel="stylesheet" href="style.css">
-    <script  src="movies.js"></script>
-    <script  src="index.js"></script>
-    <script defer src="app.js"></script>
+    
 
 </head>
 <body>
@@ -74,7 +72,7 @@
                     <h2>Improve your Film <span class="purple">Collection</span></h2>
                     <div class="header__movie">
                     <input type="text" class="header__movie--input"  placeholder="Search by title, genre, actor"
-                    onchange="searchChange(event)"
+                    oninput="searchChange(event)"
                     />
                     <a href="#features">
                     </a>
@@ -511,5 +509,8 @@
     </div>
  </div>
 </footer>
+<script  src="movies.js"></script>
+    <script  src="index.js"></script>
+    <script defer src="app.js"></script>
 </body>
 </html>

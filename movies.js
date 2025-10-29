@@ -1,4 +1,5 @@
  let movies;
+ letsearchQuery = ""; // <= current search text
 
  async function rendermovies(filter) {
    const movieWrapper = document.querySelector(".movies");
