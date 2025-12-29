@@ -8,10 +8,14 @@ function searchChange(event) {
     const value = event.target.value.trim();
     currentSearchTerm = value;
 
+
+    // Add class to body to show sections
     if (value.length >= 3) {
+        document.body.classList.add('search-active');
         renderMovies(value);
     } else {
-        moviesWrapper.innerHTML = "<p>No movies found.</p>";
+        document.body.classList.remove('search-active');
+        moviesWrapper.innerHTML = "<p>Please enter 3 charcters to search.</p>";
     }
 }
 

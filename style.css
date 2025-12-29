@@ -285,18 +285,11 @@ header {
 
 
 
-
-
-
-
-
-    
-
-
-
-
-
-
+/* Hide movie sections on initial load */
+body:not(.search-active) #features,
+body:not(.search-active) #Recent {
+    display: none;
+}
 
 
 
@@ -618,6 +611,8 @@ select {
     font-size: 18px;
   }
 
+
+  
   .movie {
     width: 50%;
   }
