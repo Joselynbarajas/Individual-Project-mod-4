@@ -51,9 +51,6 @@ a {
   text-decoration: none;
 }
 
-a:hover {
-  text-decoration: underline;
-}
 
 ul {
   display: flex;
@@ -218,8 +215,10 @@ header {
 }
 
 .header__description {
-  display: flex;
-  flex-direction: column;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+
   align-items: center;
 }
 
@@ -250,15 +249,15 @@ header {
 
 
 .header__movie {
-        flex-direction:column;
-        height: auto;
+        flex-direction:row;
+        height:auto;
  }
 .header__movie--input {
     height: 50px;
-    width: 82%;
-    border-radius: 500px;
+    width: 42%;
+    border-radius: 50px;
     border: 2px solid rgb(33, 82, 180);
-    padding: 20px 12px 20px 32px;
+    padding: 20px 12px 20px 12px;
     color: rgb(11, 80, 177);
     font-size: 16px;
     font-weight: 50;
@@ -269,8 +268,8 @@ header {
     border-color:#043acf;
  }
 .header__movie--btn {
-    height: 45px;
-    width: 16%;
+    height: 5;
+    width: 5%;
     border-radius: 50px;
     border: 2px solid rgb(33, 82, 180);
     padding: 20px 12px 20px 32px;
@@ -454,26 +453,27 @@ FEATURES
 
 
 .image-container {
-  position:sticky;
+  position:relative;
   display: inline-block;
 }
 
 .image-container img {
   display: block;
-  width: 50%; 
-  height: auto;
+  width: 35%; 
+  height: 25%;
 }
 
 .text-overlay {
-  position: absolute;
+  position:relative;
   top: 10%;
-  left: 50%; 
-  transform: translate(30%, -0%); 
+  left: -5%; 
+  right: -20%;
+  transform: translate(43%, -105%); 
   color: white;
   background-color: rgba(17, 106, 158, 0.5); 
-  padding: 10px 20px; 
+  padding: 50px 20px; 
   font-size: 1.5rem; 
-  text-align: center;
+  text-align:center;
   border-radius: 10px; 
 }
 

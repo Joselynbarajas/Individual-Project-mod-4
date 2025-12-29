@@ -41,7 +41,7 @@ if (data.Response === "True" && Array.isArray(data.Search)) {
     moviesWrapper.innerHTML = `<p> No results found for "${searchTerm}".</p>`;
 }
 }  catch (err) {
-    console.error("Fetch error;", err);
+    console.error("Fetch error:", err);
     moviesWrapper.innerHTML = "<p>Something went wrong. Please try again </p>";
   }
 }
@@ -50,7 +50,7 @@ if (data.Response === "True" && Array.isArray(data.Search)) {
 
 function displayMovies(list) {
      moviesWrapper.innerHTML = list
-    .slice(0,6)
+    .slice(0, 6)
     .map(movie => `
         <div class="movie">
         <figure class="movie__img--wrapper">
@@ -62,7 +62,7 @@ function displayMovies(list) {
          </figure>
          <div class="movie__title">${movie.Title}</div>
          <div class="movie__year">${movie.Year}</div>
-         <button class="btn learn-more" onclick="learMore('${movie.imdbID}')">Learn More </button>
+         <button class="btn learn-more" onclick="learnMore('${movie.imdbID}')">Learn More </button>
         </div>
    `)
     .join("");

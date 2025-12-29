@@ -23,7 +23,7 @@
         <button class="btn__menu" onclick="openMenu()">
           <i class="fas fa-bars"></i>
         </button>
-        <div class="menu__backdrop" style="visibility: hidden;">
+        <div class="menu__backdrop" style="visibility:collapse;">
           <button class="btn__menu btn__menu--close" onclick="closeMenu()">
             <i class="fas fa-times"></i>
           </button>
@@ -44,55 +44,65 @@
 
  <main id="movies__main">
     <section>
+      <header>  
       <div class="container">
         <div class="row">
           <div class="movies__header">
-            <a href="#Home">
+            <a href="#Home"> 
+                
             <h2 class="section__title movies__header--title">
-              All <span class="purple">movies</span>
+              All <span class="purple">Movies</span> 
             </h2>
-        </a>
-            <select id="movieSort" onclick="openMenu()">
+        </div>
+        <div class="header__container">
+         <div class="header__description">
+                <h1>Find Your Movies</h1>
+                 <select id="movieSort" onclick="openMenu()">
               <option  value="Newest to Oldest">Sort by Year</option>
               <option value="LOW_TO_HIGH">Price, Low to High</option>
               <option value="HIGH_TO_LOW">Price, High to Low</option>
               <option value="RATING">Rating</option>
             </select>
-          </div>
-          <div class="movies">
-          </div>
-        </div>
-      </div>
-    </section>
-  </main> 
-<header>
-            <div class="header__container">
-                <div class="header__description">
-                    <h1>Find Your Movies</h1>
-                    <h2>Improve your Film <span class="purple">Collection</span></h2>
-                    <div class="header__movie">
-                    <input type="text" class="header__movie--input"  placeholder="Search by title, genre, actor"
-                    oninput="searchChange(event)"
-                    />
-                    <a href="#features">
-                    </a>
-                    <button class="header__movie--btn"> Go </button>
-                    <section class="search">
-                    <div class="movies">
+            </div>
+               <h2>Improve your Film <span class="purple">Collection</span></h2>
+             <div class="header__movie">
+            <input type="text" class="header__movie--input"  placeholder="Search by title, genre, actor"
+              oninput="searchChange(event)"
+            /> 
+             </div>
+             </header>
+             
+                 <a href="#features">
+                 </a>
+                 <button class="header__movie--btn"> Go </button>
+                 <section class="search">
+                 <div class="movies">
                  </div>
                 </section>
-                
-                </div>
-            </div>
                 <figure class="header__img--wrapper"></figure>
 
             <div class="image-container">
                 <img src="Assets/mid90s-poster.jpeg" alt="Descriptive Text">
             <div class="text-overlay"><h2>Mid 90's </h2> In 1990s Los Angeles, a 13-year-old spends his summer navigating between a troubled home life and a crew of new friends he meets at a skate shop.</div>
         </div>
-    </div>
-        </header>
+        
+    </div> 
+</header>
+      
+                 </section>
     </section>
+                </div>
+            </div>
+            
+          </div>
+          <div class="movies">
+          </div>
+        </div>
+      </div> 
+    </section>
+  </main> 
+
+        
 <section id="features">
             <div class="container">
                 <div class="row">
@@ -182,8 +192,6 @@
                 </div>
             </div>
         </section>    
-
-
 
 
 
