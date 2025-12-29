@@ -17,7 +17,7 @@ function searchChange(event) {
         document.body.classList.remove('search-active');
         moviesWrapper.innerHTML = "<p>Please enter 3 charcters to search.</p>";
     }
-}
+} 
 
 
     renderMovies(event.target.value);
