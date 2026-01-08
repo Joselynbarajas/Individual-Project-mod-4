@@ -9,25 +9,20 @@ function searchChange(event) {
     currentSearchTerm = value;
 
 
+if (value.length >= 3) {
     // Add class to body to show sections
-    if (value.length >= 3) {
         document.body.classList.add('search-active');
         renderMovies(value);
     } else {
+        //Remove class to hide movie sections
         document.body.classList.remove('search-active');
         moviesWrapper.innerHTML = "<p>Please enter 3 charcters to search.</p>";
     }
 } 
 
 
-    renderMovies(event.target.value);
-    searchName.innerHTML = event.target.value;
-
-
-
 function openMenu() {
-  console.log("Sort menu opened");
-  
+  console.log("Sort menu opened"); 
 }
 
 
@@ -81,16 +76,7 @@ sortedMovies.sort((a,b) => parseInt(b.Year) - parseInt(a.Year));
    } else if (sortOption === "oldest"){
 sortedMovies.sort((a,b) => parseInt(a.Year) - parseInt(b.Year));
     }
-    if (sortOption === "Lowest") {
-sortedMovies.sort((a,b) => parseInt(b.Year) - parseInt(a.Price));
-   } else if (sortOption === "Highest"){
-sortedMovies.sort((a,b) => parseInt(a.Year) - parseInt(b.Price));
-    }
-    if (sortOption === "Rating Lowest") {
-sortedMovies.sort((a,b) => parseInt(b.Year) - parseInt(a.Price));
-   } else if (sortOption === "Rating Highest"){
-sortedMovies.sort((a,b) => parseInt(a.Year) - parseInt(b.Price));
-    }
+   
 
     displayMovies(sortedMovies);
 }

@@ -201,7 +201,7 @@ LANDING
 }
 
 header {
-  height: calc(100vh - 80px);
+  height: calc(50vh - 80px);
 }
 
 .header__container {
@@ -269,7 +269,7 @@ header {
  }
 .header__movie--btn {
     height: 5;
-    width: 5%;
+    width: 10%;
     border-radius: 50px;
     border: 2px solid rgb(33, 82, 180);
     padding: 20px 12px 20px 32px;
@@ -287,15 +287,17 @@ header {
 
 
 
-
-
-/* Hide movie sections on initial load */
-body:not(.search-active) #features,
-body:not(.search-active) #Recent {
+/* Hide movie sections initial  */
+#features,
+#Recent {
     display: none;
 }
 
-
+/*Show section when search is active */
+body.search-active #features,
+body.search-active #Recent {
+  display: block;
+}
 
 
 
@@ -447,29 +449,35 @@ FEATURES
 
 .image-container {
   position:relative;
-  display: inline-block;
+  display:block;
 }
 
 .image-container img {
   display: block;
-  width: 35%; 
-  height: 25%;
+  width: 25%; 
+  height: 35%;
 }
+
+.image-wrapper {
+  position: relative;
+}
+
 
 .text-overlay {
   position:relative;
   top: 10%;
-  left: -5%; 
-  right: -20%;
+  left: -7%; 
+  right: 50%;
   transform: translate(43%, -105%); 
+  max-width: 73%;
   color: white;
   background-color: rgba(17, 106, 158, 0.5); 
-  padding: 50px 20px; 
+  padding: 50px 55px; 
   font-size: 1.5rem; 
   text-align:center;
   border-radius: 10px; 
+  box-sizing: border-box;
 }
-
 
 /* 
 

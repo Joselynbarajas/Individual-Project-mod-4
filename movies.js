@@ -70,10 +70,6 @@
    rendermovies(event.target.value);
  }
 
- setTimeout(() => {
-   rendermovies();
- });
-
 
   // *FAKE DATA*/
 
