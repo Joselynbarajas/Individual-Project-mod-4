@@ -50,7 +50,7 @@ if (data.Response === "True" && Array.isArray(data.Search)) {
 function displayMovies(list) {
      moviesWrapper.innerHTML = list
     .slice(0, 6)
-    .map(movie => `
+    .map((movie) => `
         <div class="movie">
         <figure class="movie__img--wrapper">
         <img 
@@ -67,7 +67,7 @@ function displayMovies(list) {
     .join("");
 }
 
-function sortChange(event) {
+function openMenu(event) {
     const sortOption = event.target.value;
     let sortedMovies = [...currentMovies];
 

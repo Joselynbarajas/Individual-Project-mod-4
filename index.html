@@ -57,13 +57,12 @@
         <div class="header__container">
          <div class="header__description">
                 <h1>Find Your Movies</h1>
-                 <select id="movieSort" onclick="openMenu()">
-              <option  value="Newest to Oldest">Sort by Year</option>
-              <option value="LOW_TO_HIGH">Price, Low to High</option>
-              <option value="HIGH_TO_LOW">Price, High to Low</option>
-              <option value="RATING">Rating</option>
+                 <select name="movieSort" id="movieSort" onclick="openMenu(event)">
+              <option  value="">Sort by Year</option>
+              <option value="newest ">Newest to Oldest</option>
+              <option value="oldest">Oldest to Newest</option>
             </select>
-            </div>
+            </div> 
                <h2>Improve your Film <span class="purple">Collection</span></h2>
              <div class="header__movie">
             <input type="text" class="header__movie--input"  placeholder="Search by title, genre, actor"
@@ -81,12 +80,14 @@
                 </section>
                 <figure class="header__img--wrapper"></figure>
 </header>
+
             <div class="image-container">
                 <img src="Assets/mid90s-poster.jpeg" alt="Descriptive Text">
-            <div class="text-overlay"><h2>Mid 90's </h2> In 1990s Los Angeles, a 13-year-old spends his summer navigating between a troubled home life and a crew of new friends he meets at a skate shop.</div>
+            <div class="text-overlay"><h2>Mid 90's </h2> 
+                In 1990s Los Angeles, a 13-year-old spends his summer navigating between a troubled home life and a crew of new friends he meets at a skate shop.</div>
         </div>
-        
-    </div> 
+       
+     
     </section>
                 </div>
             </div>

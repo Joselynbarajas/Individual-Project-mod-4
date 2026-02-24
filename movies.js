@@ -1,5 +1,5 @@
  let movies;
- letsearchQuery = ""; 
+ let searchQuery = ""; 
 
  async function rendermovies(filter) {
    const movieWrapper = document.querySelector(".movies");
@@ -10,6 +10,7 @@
    }
   
    movieWrapper.classList.remove('movies__loading');
+
 
    if (filter === "LOW_TO_HIGH") {
      movies.sort(
